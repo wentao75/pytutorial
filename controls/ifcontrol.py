@@ -1,3 +1,4 @@
+# if example
 x = int(input("请输入一个正数："))
 if x < 0:
     x = 0
