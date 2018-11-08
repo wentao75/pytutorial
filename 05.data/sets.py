@@ -8,3 +8,17 @@ basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 print(basket)
 'orange' in basket
 'crabgrass' in basket
+
+a = set('abracadabra')
+b = set('alacazam')
+a
+b
+a - b
+b - a
+a | b
+a & b
+a ^ b
+
+# 堆也支持队列导出式
+a = {x for x in 'abracadabra' if x not in 'abc'}
+a
