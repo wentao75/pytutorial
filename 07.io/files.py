@@ -46,5 +46,5 @@ f.close()
 
 f = open(json_file, 'r')
 x = json.load(f)
-print(x)
+print(x, x[0], x[1])
 f.close()
