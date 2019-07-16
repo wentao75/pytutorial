@@ -3,7 +3,7 @@ def fib(n):
     a, b = 0, 1
     while a < n:
         print(a, end=' ')
-        a, b = b, a+b
+        a, b = b, a + b
 
     print()
 
@@ -21,7 +21,7 @@ def fib2(n):
     a, b = 0, 1
     while a < n:
         result.append(a)
-        a, b = b, a+b
+        a, b = b, a + b
 
     return result
 
@@ -83,17 +83,17 @@ def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
 
 
 # 下面都是正确的调用方式，使用参数名=数值的方式
-parrot(1000)                                          # 1 positional argument
-parrot(voltage=1000)                                  # 1 keyword argument
-parrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments
-parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
-parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
+parrot(1000)  # 1 positional argument
+parrot(voltage=1000)  # 1 keyword argument
+parrot(voltage=1000000, action='VOOOOOM')  # 2 keyword arguments
+parrot(action='VOOOOOM', voltage=1000000)  # 2 keyword arguments
+parrot('a million', 'bereft of life', 'jump')  # 3 positional arguments
 parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
 
 # 下面是无效的调用方式
-parrot()                     # required argument missing
+parrot()  # required argument missing
 # parrot(voltage=5.0, 'dead')  # non-keyword argument after a keyword argument
-parrot(110, voltage=220)     # duplicate value for the same argument
+parrot(110, voltage=220)  # duplicate value for the same argument
 parrot(actor='John Cleese')  # unknown keyword argument
 
 
@@ -111,11 +111,13 @@ def cheeseshop(kind, *arguments, **keywords):
         print(kw, ":", keywords[kw])
 
 
-cheeseshop("Limburger", "It's very runny, sir.",
-           "It's really very, VERY runny, sir.",
-           shopkeeper="Michael Palin",
-           client="John Cleese",
-           sketch="Cheese Shop Sketch")
+cheeseshop(
+    "Limburger",
+    "It's very runny, sir.",
+    "It's really very, VERY runny, sir.",
+    shopkeeper="Michael Palin",
+    client="John Cleese",
+    sketch="Cheese Shop Sketch")
 
 
 # 任意参数列表
@@ -132,7 +134,6 @@ def concat(*args, sep="/"):
 concat("earth", "mars", "venus")
 
 concat("earth", "mars", "venus", sep=".")
-
 
 # 对于已经有参数存在于list数组或者tuple结构中时，但是需要提供给函数的参数使用时，可以使用
 # *操作符对解包在结构中的数据到参数列表中
@@ -182,10 +183,10 @@ print(my_function.__doc__)
 # 函数注释，Function Annotations
 # 注释不会影响到函数的其他方面，所有的注释存储在 __annotations__ 属性中，参数在参数名后用
 # 冒号定义，返回值通过在表达式最后跟 -> 定义
-def f(ham: str, eggs: str = 'eggs') -> str:
+def f2(ham: str, eggs: str = 'eggs') -> str:
     print("Annotations:", f.__annotations__)
     print("Arguments:", ham, eggs)
     return ham + ' and ' + eggs
 
 
-f('spam')
+f2('spam')
